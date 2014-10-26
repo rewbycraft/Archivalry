@@ -43,7 +43,7 @@ About this last one, the <filename> doesn't have to match the original filename.
 ````
 $ wget http://<host>:<port>/files/bc25a993-2484-4166-9107-6b49da916821/myawesomefile.pdf -O myawesomefile.copy.pdf
 ````
-If you shasum ````myawesomefile.pdf```` and ````myawesomefile.copy.pdf```` you will see their sums match.
+If you shasum ````myawesomefile.pdf```` and ````myawesomefile.copy.pdf```` you will see that their sums match.
 
 ###Delete
 ####Request:
