@@ -50,10 +50,10 @@ The basic gist of the process is this:
 ##After installation
 * Be sure to log into <server ip>:9000/admin/ (the admin panel) with the username admin and the password password. You should change the admin password in the admin panel as a first thing.
 
-#Contributing
+##Contributing
 Make sure to first set the basepath in app/controllers/Files.scala properly.
 
-#FAQ
+##FAQ
 
-##Help! I deleted my admin user!/Removed admin permissions from my admin user!
+###Help! I deleted my admin user!/Removed admin permissions from my admin user!
 Simply restart the archivalry service and it will automatically fix the permissions for the admin user or add a new admin user if you deleted the user entirely (with the default password settings).
