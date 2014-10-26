@@ -33,7 +33,10 @@ Some notes though:
 * I haven't tested rpm. It might not work.
 * You need to use the distro specific method for restarting a service to restart the archivalry service where the debian guide uses the ````sudo service archivalry restart```` command.
 
-###Manually
+###Manually (CURRENTLY BROKEN)
+
+At the moment this process doesn't work. Please one the packaged processes, these are officially supported.
+
 So far I haven't gotten a proper install procedure together when doing manual installs, as such, this may not work.
 The basic gist of the process is this:
 * Get source
