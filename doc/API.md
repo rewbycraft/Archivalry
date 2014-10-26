@@ -12,7 +12,7 @@ PUT /files/<filename>
 ````
 ####Example:
 ````
-$ curl -X PUT --data-binary "@/home/user/myawesomefile.pdf" http://<host>:<port>/files/myawesomefile.pdf
+$ curl -u username:password -X PUT --data-binary "@/home/user/myawesomefile.pdf" http://<host>:<port>/files/myawesomefile.pdf
 bc25a993-2484-4166-9107-6b49da916821
 ````
 
@@ -56,6 +56,6 @@ File deleted.
 ````
 ####Example:
 ````
-$ curl -X DELETE http://<host>:<port>/files/bc25a993-2484-4166-9107-6b49da916821
+$ curl -u username:password -X DELETE http://<host>:<port>/files/bc25a993-2484-4166-9107-6b49da916821
 File deleted.
 ````
