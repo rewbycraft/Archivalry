@@ -21,8 +21,7 @@ On your local machine:
 * Your deb will be under ./target/
 * Upload this file to your server and install it.
 * Make sure to also install a jre (I recommend openjdk-7-jre-headless on ubuntu)
-* Run this command on your server: ````sudo archivalry -DapplyEvolutions.default=true```` This will run archivalry once. When you see ````[info] play - Application started (Prod)```` you can kill it with CTRL-C.
-* Now run this on your server: ````sudo chown -R archivalry:archivalry /usr/share/archivalry ; sudo chown -R archivalry:archivalry /usr/share/archivalry/*```` (to fix some perms that were messed up by the previous command)
+* Run this command on your server: ````cd /usr/share/archivalry ; sudo -u archivalry archivalry -DapplyEvolutions.default=true```` This will run archivalry once. When you see ````[info] play - Application started (Prod)```` you can kill it with CTRL-C.
 * Now run this on your server: ````sudo service archivalry restart```` and away you go.
 * I recommend getting apache2 (or nginx, although I have no experience with the latter) to function as a (reverse) proxy. See your webserver docs for how to do this.
 
