@@ -6,6 +6,7 @@
 ````
 PUT /files/<filename>
 ````
+Remark: This request requires authentication. Any valid user will do (it doesn't need to be an admin). It uses basic HTTP authentication.
 ####Result:
 ````
 <uuid>
@@ -50,6 +51,7 @@ If you shasum ````myawesomefile.pdf```` and ````myawesomefile.copy.pdf```` you w
 ````
 DELETE /files/<uuid>
 ````
+Remark: This request requires authentication. Any valid user will do (it doesn't need to be an admin). It uses basic HTTP authentication.
 ####Result:
 ````
 File deleted.
