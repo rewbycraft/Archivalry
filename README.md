@@ -22,6 +22,7 @@ On your local machine:
 * Upload this file to your server and install it.
 * Make sure to also install a jre (I recommend openjdk-7-jre-headless on ubuntu)
 * Run this command on your server: ````sudo archivalry -DapplyEvolutions.default=true```` This will run archivalry once. When you see ````[info] play - Application started (Prod)```` you can kill it with CTRL-C.
+* Now run this on your server: ````sudo chown -R archivalry:archivalry /usr/share/archivalry```` (to fix some perms that were messed up by the previous command)
 * Now run this on your server: ````sudo service archivalry restart```` and away you go.
 * I recommend getting apache2 (or nginx, although I have no experience with the latter) to function as a (reverse) proxy. See your webserver docs for how to do this.
 
@@ -33,7 +34,7 @@ Some notes though:
 * You need to use the distro specific method for restarting a service to restart the archivalry service where the debian guide uses the ````sudo service archivalry restart```` command.
 
 ###Manually
-So far I haven't gotten a proper install procedure together when doing manual installs.
+So far I haven't gotten a proper install procedure together when doing manual installs, as such, this may not work.
 The basic gist of the process is this:
 * Get source
 * Run ````sbt assemble```` (make sure to have sbt installed)
