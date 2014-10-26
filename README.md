@@ -52,3 +52,8 @@ The basic gist of the process is this:
 
 #Contributing
 Make sure to first set the basepath in app/controllers/Files.scala properly.
+
+#FAQ
+
+##Help! I deleted my admin user!/Removed admin permissions from my admin user!
+Simply restart the archivalry service and it will automatically fix the permissions for the admin user or add a new admin user if you deleted the user entirely (with the default password settings).
