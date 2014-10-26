@@ -1,0 +1,22 @@
+@(request: Request[_], repo: models.db.MavenRepository, artifacts: Array[(String, String, String)])
+@template(request, "Maven Repository Info") {
+	<style>
+	.table-style {
+	border-collapse: separate; border-spacing: 20px;
+	}
+	</style>
+
+	<h2>@repo.name</h2>
+
+	<h3>Artifact list:</h3>
+	<table class="table-style">
+		<tr><td>Group</td><td>Artifact</td><td>Version</td></tr>
+		@for(artifact <- artifacts) {
+			<tr>
+				<td>@artifact._1</td>
+				<td>@artifact._2</td>
+				<td>@artifact._3</td>
+			</tr>
+		}
+	</table>
+}

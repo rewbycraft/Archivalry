@@ -1,0 +1,24 @@
+@(request: Request[_])
+@views.html.admin.template(request, "Users") {
+	<style>
+		.table-style {
+			border-collapse: separate; border-spacing: 20px;
+		}
+	</style>
+
+	<a href="/admin/users/adduser">Add user</a><br/>
+	<table class="table-style">
+		<tr><td>Username</td><td>Admin</td><td>Operations</td></tr>
+		@for(user <- authentication.UserManager.getUsers){
+			<tr>
+				<td>@user.username</td>
+				@if(user.admin){
+					<td><i class="fa fa-check" style="color: green;"></i></td>
+				} else {
+					<td><i class="fa fa-times" style="color: red;"></i></td>
+				}
+				<td><a href="/admin/users/profile?user=@user.username"><i class="fa fa-pencil-square-o" style="color: black;"></i></a></td>
+			</tr>
+		}
+	</table>
+}

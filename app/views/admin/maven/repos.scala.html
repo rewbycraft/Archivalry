@@ -1,0 +1,24 @@
+@(request: Request[_])
+@views.html.admin.template(request, "Maven repositories") {
+
+	<style>
+		.table-style {
+			border-collapse: separate; border-spacing: 20px;
+		}
+	</style>
+
+	<a href="/admin/maven/addrepo">Add repository</a></br>
+	<table class="table-style">
+		<tr><td></td><td>Repository Name</td><td>URL</td><td>Operations</td></tr>
+		@for(repo <- controllers.MavenRepositoryManager.getRepos) {
+			<tr>
+				<td>@repo.id</td>
+				<td>@repo.name</td>
+				<td><a href="/maven/@repo.name/">Link</a></td>
+				<td>
+					<a href="/admin/maven/delrepo?id=@repo.id" style="color: red;"><i class="fa fa-times"></i></a>
+				</td>
+			</tr>
+		}
+	</table>
+}

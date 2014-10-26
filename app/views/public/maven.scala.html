@@ -1,0 +1,18 @@
+@(request: Request[_])
+@template(request, "Maven") {
+	<style>
+	.table-style {
+	border-collapse: separate; border-spacing: 20px;
+	}
+	</style>
+	<table class="table-style">
+		<tr><td>Repository name</td><td>URL</td><td>Information</td></tr>
+		@for(repo <- MavenRepositoryManager.getRepos){
+			<tr>
+				<td>@repo.name</td>
+				<td><a href="/maven/@repo.name/">Link!</a></td>
+				<td><a href="/maveninfo/@repo.name"><i class="fa fa-arrow-right" style="color: blue;"></i></a></td>
+			</tr>
+		}
+	</table>
+}

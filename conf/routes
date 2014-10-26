@@ -1,0 +1,38 @@
+#public
+GET           /                           @controllers.gui.Public.home
+GET           /maveninfo                  @controllers.gui.Public.mavenList
+GET           /maveninfo/                 @controllers.gui.Public.mavenList
+GET           /maveninfo/:name            @controllers.gui.Public.mavenInfo(name: String)
+
+#admin
+GET           /admin/                     @controllers.gui.admin.Admin.home
+GET           /admin/maven/repos          @controllers.gui.admin.Maven.repos
+GET           /admin/maven/addrepo        @controllers.gui.admin.Maven.addrepo
+GET           /admin/maven/delrepo        @controllers.gui.admin.Maven.delrepo
+POST          /admin/maven/addrepo        @controllers.gui.admin.Maven.handleAddrepo
+GET           /admin/files/list           @controllers.gui.admin.Admin.files
+GET           /admin/users/profile        @controllers.gui.admin.Users.profile
+POST          /admin/users/profile        @controllers.gui.admin.Users.handleProfileChange
+GET           /admin/users/list           @controllers.gui.admin.Users.list
+GET           /admin/users/adduser        @controllers.gui.admin.Users.addUser
+POST          /admin/users/adduser        @controllers.gui.admin.Users.handleAddUser
+
+#Files
+PUT           /files/:filename            @controllers.Files.put(filename: String)
+DELETE        /files/:id                  @controllers.Files.delete(id: String)
+
+GET           /files/:id                  @controllers.Files.get(id: String, filename=null)
+GET           /files/:id/                 @controllers.Files.get(id: String, filename=null)
+GET           /files/:id/:filename        @controllers.Files.get(id: String, filename: String)
+
+#Maven
+GET           /maven/:repo/*path          @controllers.Maven.get(repo: String, path: String)
+PUT           /maven/:repo/*path          @controllers.Maven.put(repo: String, path: String)
+
+GET           /assets/*file               controllers.Assets.at(path="/public", file: String)
+
+#Authentication
+GET           /auth/login/*origUrl        @controllers.AuthenticationController.login(origUrl: String)
+POST          /auth/login/*origUrl        @controllers.AuthenticationController.handleLogin(origUrl: String)
+GET           /auth/logout                @controllers.AuthenticationController.logout
+

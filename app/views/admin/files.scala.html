@@ -1,0 +1,14 @@
+@(request: Request[_])
+@template(request, "Files") {
+	<style>
+	.table-style {
+	border-collapse: separate; border-spacing: 20px;
+	}
+	</style>
+	<table class="table-style">
+		<tr><td>UUID</td><td>Filename</td><td>URL</td></tr>
+		@for(file <- FileManager.listFiles()) {
+			<tr><td>@file.id</td><td>@file.filename</td><td><a href="/files/@file.id/@file.filename">Link</a></td><td></td></tr>
+		}
+	</table>
+}
