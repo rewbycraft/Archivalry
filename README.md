@@ -37,7 +37,7 @@ Some notes though:
 So far I haven't gotten a proper install procedure together when doing manual installs, as such, this may not work.
 The basic gist of the process is this:
 * Get source
-* Run ````sbt assemble```` (make sure to have sbt installed)
+* Run ````sbt assembly```` (make sure to have sbt installed)
 * Copy the assembled jar to your server (in target/scala*).
 * Run the jar with ````java -jar <filename>.jar```` (it will set stuff up in the current workingdirectory)
 * Set your web server up to serve 127.0.0.1:9000 on some port (it *must* be as / because of a bug in the routing code).
