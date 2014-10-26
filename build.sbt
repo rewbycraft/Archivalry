@@ -42,4 +42,14 @@ resolvers += "RoundEights" at "http://maven.spikemark.net/roundeights"
 
 libraryDependencies += "com.roundeights" %% "hasher" % "1.0.0"
 
-publishMavenStyle := true
+libraryDependencies += jdbc
+
+libraryDependencies += "com.h2database" % "h2" % "1.4.182"
+
+mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
+	{
+		case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
+		case x => MergeStrategy.first
+	}
+}
+
