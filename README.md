@@ -5,13 +5,16 @@ Archivalry is an (web) application to serve files and repositories thereof.
 Archivalry is developed to be simple and small and as such does not have some of the more fancy features (or styling).
 Various repository types are supported, although they may not be *completely* to spec, most of them should just work (famous last words) (feel free to create an issue if something doesn't work).
 I wrote Archivalry as a quicky project, as such the code isn't very clean or pretty and neither is the UI. But it works.
+Archivalry only implements the bare minimum (and usually even less) to make the repositories work.
+
+###YOU'RE BETTER OFF GETTING PROPER TOOLING IF YOU ARE PLANNING TO USE THIS IN ANY SERIOUS MANNER. THERE ARE MANY SECURITY ISSUES WITH IT AND IT DOES _NOT_ SUPPORT MANY OF THE FEATURES COMMONLY USED/PROVIDED BY YOUR TOOLS
 
 ##What kind of repositories are supported?
 * Direct file access (via simple api, or via link available from dashboard)
 * Maven (Maven 2 only. Basic support only. Only tested with sbt. No maven-metadata.xml.)
 
 ##API
-See ````doc/API.md````
+See [````doc/API.md````](doc/API.md)
 
 ##Installation
 ###Debian

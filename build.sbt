@@ -2,11 +2,7 @@ import com.typesafe.sbt.SbtNativePackager._
 
 import NativePackagerKeys._
 
-import AssemblyKeys._
-
 import play.PlayImport.PlayKeys
-
-assemblySettings
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
@@ -24,10 +20,6 @@ rpmUrl := Some("http://github.com/rewbycraft/Archivalry")
 
 rpmLicense := Some("MIT")
 
-mainClass in assembly := Some("play.core.server.NettyServer")
-
-fullClasspath in assembly += Attributed.blank(PlayKeys.playPackageAssets.value)
-
 name := "Archivalry"
 
 version := "0.1-SNAPSHOT"
@@ -42,14 +34,4 @@ resolvers += "RoundEights" at "http://maven.spikemark.net/roundeights"
 
 libraryDependencies += "com.roundeights" %% "hasher" % "1.0.0"
 
-libraryDependencies += jdbc
-
 libraryDependencies += "com.h2database" % "h2" % "1.4.182"
-
-mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
-	{
-		case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
-		case x => MergeStrategy.first
-	}
-}
-

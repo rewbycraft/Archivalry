@@ -13,6 +13,11 @@ class Public extends Controller {
 			Ok(views.html.public.home(request))
 	}
 
+	def ping = Action
+	{
+		Ok("PONG")
+	}
+
 	def mavenList = Action
 	{
 		implicit request =>

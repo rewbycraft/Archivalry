@@ -21,7 +21,7 @@ object FileManager {
 	def createFile(name: String): (java.io.File, String) =
 	{
 		val uuid = java.util.UUID.randomUUID().toString
-		val file = new java.io.File(basePath.toAbsolutePath.toString + "/" + uuid)
+		val file = new java.io.File(basePath.toAbsolutePath.toString, uuid)
 
 		import play.api.Play.current
 		play.api.db.slick.DB.withSession
@@ -55,7 +55,7 @@ object FileManager {
 				if (q.list.size == 0)
 					return false
 				val affected = q.delete.run
-				val file = new java.io.File(basePath.toAbsolutePath.toString + "/" + id)
+				val file = new java.io.File(basePath.toAbsolutePath.toString, id)
 				val fileres = file.delete()
 				fileres
 		}
@@ -72,7 +72,7 @@ object FileManager {
 					return None
 				if (!openReally)
 					return Some((null, lf(0).filename))
-				Some((new java.io.File(basePath.toAbsolutePath.toString + "/" + id), lf(0).filename))
+				Some((new java.io.File(basePath.toAbsolutePath.toString, id), lf(0).filename))
 		}
 	}
 
