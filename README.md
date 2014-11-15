@@ -1,5 +1,10 @@
 #Archivalry
 
+##THIS PROJECT HAS BEEN ABANDONED
+The goal for Archivalry was to serve my artifacts from a cheap vps as my main server did not have any mentionable upload speed (and could barely run the available programs).
+I have since upgraded my main server and now I can actually use it to host my files.
+As such this project doesn't serve a purpose anymore.
+
 ##What is Archivalry?
 Archivalry is an (web) application to serve files and repositories thereof.
 Archivalry is developed to be simple and small and as such does not have some of the more fancy features (or styling).

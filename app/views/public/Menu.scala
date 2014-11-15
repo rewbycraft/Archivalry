@@ -6,7 +6,8 @@ package views.public
 object Menu {
 	val menu = Array(
 			MenuItem("Home", "/"),
-			MenuItem("Maven Repositories", "/maveninfo")
+			MenuItem("Maven Repositories", "/maveninfo"),
+			MenuItem("Debian Repositories", "/debianinfo")
 	)
 }
 

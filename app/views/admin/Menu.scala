@@ -9,6 +9,7 @@ object Menu {
 			MenuItem("Overview", "/admin/"),
 			MenuItem("File list", "/admin/files/list"),
 			MenuItem("Maven Repositories", "/admin/maven/repos"),
+			MenuItem("Debian Repositories", "/admin/debian/repos"),
 			MenuItem("Users", "/admin/users/list")
 		))
 	)

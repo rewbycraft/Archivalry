@@ -59,3 +59,9 @@ File deleted.
 $ curl -X DELETE http://<host>:<port>/files/bc25a993-2484-4166-9107-6b49da916821
 File deleted.
 ````
+
+##Debian
+###Upload
+````
+PUT /debian/upload/<repo name>/<filename>
+````

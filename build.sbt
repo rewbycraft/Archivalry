@@ -35,3 +35,6 @@ resolvers += "RoundEights" at "http://maven.spikemark.net/roundeights"
 libraryDependencies += "com.roundeights" %% "hasher" % "1.0.0"
 
 libraryDependencies += "com.h2database" % "h2" % "1.4.182"
+
+libraryDependencies += "org.apache.commons" % "commons-compress" % "1.9"
+

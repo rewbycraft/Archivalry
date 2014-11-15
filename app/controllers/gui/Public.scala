@@ -24,6 +24,11 @@ class Public extends Controller {
 			Ok(views.html.public.maven(request))
 	}
 
+	def debianList = Action {
+		implicit request =>
+			Ok(views.html.public.debian(request))
+	}
+
 	def mavenInfo(name: String) = Action
 	{
 		implicit request =>

@@ -1,45 +1,49 @@
 #public
-GET           /                                                                   @controllers.gui.Public.home
-GET           /maveninfo                                                          @controllers.gui.Public.mavenList
-GET           /maveninfo/                                                         @controllers.gui.Public.mavenList
-GET           /maveninfo/:name                                                    @controllers.gui.Public.mavenInfo(name: String)
+GET           /                                     @controllers.gui.Public.home
+GET           /maveninfo                            @controllers.gui.Public.mavenList
+GET           /debianinfo                           @controllers.gui.Public.debianList
+GET           /maveninfo/                           @controllers.gui.Public.mavenList
+GET           /maveninfo/:name                      @controllers.gui.Public.mavenInfo(name: String)
 
-GET           /ping                                                               @controllers.gui.Public.ping
+GET           /ping                                 @controllers.gui.Public.ping
 
 #admin
-GET           /admin/                                                             @controllers.gui.admin.Admin.home
-GET           /admin/maven/repos                                                  @controllers.gui.admin.Maven.repos
-GET           /admin/maven/addrepo                                                @controllers.gui.admin.Maven.addrepo
-GET           /admin/maven/delrepo                                                @controllers.gui.admin.Maven.delrepo
-POST          /admin/maven/addrepo                                                @controllers.gui.admin.Maven.handleAddrepo
-GET           /admin/files/list                                                   @controllers.gui.admin.Admin.files
-GET           /admin/users/profile                                                @controllers.gui.admin.Users.profile
-POST          /admin/users/profile                                                @controllers.gui.admin.Users.handleProfileChange
-GET           /admin/users/list                                                   @controllers.gui.admin.Users.list
-GET           /admin/users/adduser                                                @controllers.gui.admin.Users.addUser
-POST          /admin/users/adduser                                                @controllers.gui.admin.Users.handleAddUser
+GET           /admin/                               @controllers.gui.admin.Admin.home
+GET           /admin/maven/repos                    @controllers.gui.admin.Maven.repos
+GET           /admin/maven/addrepo                  @controllers.gui.admin.Maven.addrepo
+GET           /admin/maven/delrepo                  @controllers.gui.admin.Maven.delrepo
+POST          /admin/maven/addrepo                  @controllers.gui.admin.Maven.handleAddrepo
+GET           /admin/files/list                     @controllers.gui.admin.Admin.files
+GET           /admin/users/profile                  @controllers.gui.admin.Users.profile
+POST          /admin/users/profile                  @controllers.gui.admin.Users.handleProfileChange
+GET           /admin/users/list                     @controllers.gui.admin.Users.list
+GET           /admin/users/adduser                  @controllers.gui.admin.Users.addUser
+POST          /admin/users/adduser                  @controllers.gui.admin.Users.handleAddUser
+GET           /admin/debian/repos                   @controllers.gui.admin.Debian.repos
+GET           /admin/debian/addrepo                 @controllers.gui.admin.Debian.addrepo
+POST          /admin/debian/addrepo                 @controllers.gui.admin.Debian.handleAddrepo
 
 #Files
-PUT           /files/:filename                                                    @controllers.Files.put(filename: String)
-DELETE        /files/:id                                                          @controllers.Files.delete(id: String)
+PUT           /files/:filename                      @controllers.Files.put(filename: String)
+DELETE        /files/:id                            @controllers.Files.delete(id: String)
 
-GET           /files/:id                                                          @controllers.Files.get(id: String, filename=null)
-GET           /files/:id/                                                         @controllers.Files.get(id: String, filename=null)
-GET           /files/:id/:filename                                                @controllers.Files.get(id: String, filename: String)
+GET           /files/:id                            @controllers.Files.get(id: String, filename=null)
+GET           /files/:id/                           @controllers.Files.get(id: String, filename=null)
+GET           /files/:id/:filename                  @controllers.Files.get(id: String, filename: String)
 
 #Maven
-GET           /maven/:repo/*path                                                  @controllers.Maven.get(repo: String, path: String)
-PUT           /maven/:repo/*path                                                  @controllers.Maven.put(repo: String, path: String)
+GET           /maven/:repo/*path                    @controllers.Maven.get(repo: String, path: String)
+PUT           /maven/:repo/*path                    @controllers.Maven.put(repo: String, path: String)
 
-GET           /assets/*file                                                       controllers.Assets.at(path="/public", file: String)
+GET           /assets/*file                         controllers.Assets.at(path="/public", file: String)
 
 #Debian
-GET           /debian/:repo/dists/:distribution/*component/source/Release         @controllers.Debian.archRelease(repo: String, distribution: String, component: String, binary = "binary-source")
-GET           /debian/:repo/dists/:distribution/*component/:binary/Release        @controllers.Debian.archRelease(repo: String, distribution: String, component: String, binary: String)
-GET           /debian/:repo/dists/:distribution/Release                           @controllers.Debian.distRelease(repo: String, distribution: String)
+PUT           /debian/upload/:repo/:filename        @controllers.Debian.upload(repo, filename)
+GET           /debian/:repo/Packages.gz             @controllers.Debian.packages(repo)
+GET           /debian/:repo/:id                     @controllers.Debian.file(repo: String, id: String)
 
 #Authentication
-GET           /auth/login/*origUrl                                                @controllers.AuthenticationController.login(origUrl: String)
-POST          /auth/login/*origUrl                                                @controllers.AuthenticationController.handleLogin(origUrl: String)
-GET           /auth/logout                                                        @controllers.AuthenticationController.logout
+GET           /auth/login/*origUrl                  @controllers.AuthenticationController.login(origUrl: String)
+POST          /auth/login/*origUrl                  @controllers.AuthenticationController.handleLogin(origUrl: String)
+GET           /auth/logout                          @controllers.AuthenticationController.logout
 

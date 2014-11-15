@@ -1,0 +1,12 @@
+@(request: Request[_])
+@views.html.admin.template(request, "Add a repository") {
+	<form class="form-horizontal" method="post" action="/admin/debian/addrepo" role="form">
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="repositoryname">Name:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" name="repositoryname" placeholder="Enter repository name" required autofocus>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-default">Add repository</button>
+	</form>
+}

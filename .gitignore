@@ -10,4 +10,4 @@ workingdirectory
 *~
 db.*
 filedb
-db
+h2db

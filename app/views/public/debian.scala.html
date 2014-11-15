@@ -1,0 +1,17 @@
+@(request: Request[_])
+@template(request, "Debian") {
+	<style>
+	.table-style {
+	border-collapse: separate; border-spacing: 20px;
+	}
+	</style>
+	<table class="table-style">
+		<tr><td>Repository name</td><td>sources.list entry</td></tr>
+		@for(repo <- DebianRepositoryManager.Repositories.getRepos){
+			<tr>
+				<td>@repo.name</td>
+				<td>deb &lt;base url&gt;/debian/ @repo.name/</td>
+			</tr>
+		}
+	</table>
+}
